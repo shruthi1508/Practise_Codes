@@ -1,0 +1,14 @@
+def maxsub(x,n) :
+    best = 0
+    for i in range(0,n) :
+        sum = 0
+        for j in range(i,n) :
+            sum += x[j]
+            best = max(best,sum)
+    return best
+x = [int(x) for x in input().split()]
+n = len(x)
+print(maxsub(x,n))
+
+#Sample Input : -1 2 4 -3 5 2 -5 2
+#sample Output : 10
