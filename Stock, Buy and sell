@@ -1,0 +1,35 @@
+def stockbuysell(A,n):
+    buy = 0
+    sell = 0
+    ans = []
+    for i in range(0,n-1) :
+        if A[i+1] >= A[i] :
+            sell = sell + 1
+        else :
+            if sell > buy :
+                lst = []
+                lst.append(buy)
+                lst.append(sell)
+                ans.append(lst)
+            buy = i + 1
+            sell = i + 1
+    if sell > buy :
+        lst = []
+        lst.append(buy)
+        lst.append(sell)
+        ans.append(lst)
+    return ans
+A = [100,180,260,310,40,535,695]
+n = len(A)
+ans = stockbuysell(A,n)
+if (len(ans) > 1) :
+    print("Profit")
+    for j in ans :
+        print(j, end =" ")
+else :
+    print("No Profit")
+
+
+#Output:
+Profit
+[0, 3] [4, 6] 
