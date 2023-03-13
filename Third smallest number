@@ -1,0 +1,16 @@
+def element(arr,n):
+    for i in range(n) :
+        for j in range(i+1,n):
+            if arr[j] < arr[i] :
+                temp = arr[i]
+                arr[i] = arr[j]
+                arr[j] = temp
+    return arr[k-1]
+arr = [int(x) for x in input().split()]
+n = len(arr)
+k = int(input())
+print(element(arr,n))
+
+#Input : 7 10 3 4 20 15
+3
+#Output : 7
